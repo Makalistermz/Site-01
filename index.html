@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvedor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <script>
+  const canvas = document.createElement("canvas");
+  canvas.id = "bg";
+  document.body.appendChild(canvas);
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const stars = [];
+  const numStars = 100;
+
+  for (let i = 0; i < numStars; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 2,
+      dx: (Math.random() - 0.5) * 0.5,
+      dy: (Math.random() - 0.5) * 0.5
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "white";
+    for (let i = 0; i < stars.length; i++) {
+      const s = stars[i];
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+      ctx.fill();
+
+      s.x += s.dx;
+      s.y += s.dy;
+
+      if (s.x < 0 || s.x > canvas.width) s.dx *= -1;
+      if (s.y < 0 || s.y > canvas.height) s.dy *= -1;
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
+
+    <header class="fade-in">
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidade</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+    </header>
+
+    <main id="sobre" class="fade-in">
+        <h1>Makalister Mutz Zager</h1>
+        <p>Eu sou um desenvolvedor Front-End apaixonado, especializado <br> em  criar aplicações web bonitas e funcionais.</p>
+          <button>
+              <a href="#contato">Entre em contato</a>
+          </button>
+      </main>
+    
+    <div id="habilidades" class="fade-in">
+      <h1>Habilidades</h1>
+      <div class="quadrado">
+        <div class="parte">
+         <img src="Adobe Express - file.png" alt="imagem de munitor">
+         <h2>Frontend</h2>
+         <p>HTML, CSS, Javascript</p>
+        </div>
+        <div class="parte">
+          <img src="Adobe Express ferra - file.png" alt="">
+          <h2>Ferramentas</h2>
+          <p>Github</p>
+        </div>
+    </div>
+    <section id="projetos" class="container fade-in">
+      <h1>Projetos</h1>
+      <div class="prjetos-grid">
+        <div class="projeto-card">
+          <h3 class="titulo-projeto">Curiosidades de Tecnologia</h3>
+          <p>Site sobre o Android com curiosidades, informações totalmente responsivo</p>
+          <div class="projeto-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contato fade-in">
+      <h1 class="titulo-contato">Contate-me!</h1>
+      <form class="contato-form">
+        <div class="grupo-formulario">
+          <label form="nome">Nome</label>
+          <input id="nome" name="nome" required>
+        </div>
+        <div class="grupo-formulario">
+          <label form="email">Email</label>
+          <input id="email" name="email" required>
+        </div>
+        <div class="grupo-formulario">
+          <label form="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" required></textarea>
+        </div>
+        <button type="submit">Mandar mensagem</button>
+      </form>
+    </section>
+
+    <footer>
+      <ul class="icones-footer">
+        <li>&#128187;</li>
+        <li>&#128101;</li>
+        <li>&#128038;</li>
+      </ul>
+      <p>&copy; 2025 Makalister Mutz Zager. Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>

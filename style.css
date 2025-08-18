@@ -1,0 +1,281 @@
+@charset "UTF-8";
+
+@keyframes fade {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0px);}
+}
+
+.fade-in {
+    animation: fade 1s ease-out;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+:root {
+    --cor0: #B14AED;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+canvas#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+h1 {
+    color: var(--cor0);
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+header {
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 40px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+header > a {
+    color: var(--cor0);
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5s;
+    padding: 10px;
+}
+
+header > a:hover {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+main {
+    background-color: black;
+    min-width: 290px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 140px;
+    margin-right: 40px;
+    padding: 20px 40px 20px 20px;    /*70*/
+    border-radius: 20px;
+}
+
+main > h1 {
+    font-weight: bold;
+    color: var(--cor0);
+    font-size: 2.6em;
+}
+
+main > p {
+    color: white;
+    font-size: 1.3em;
+    padding-top: 15px;
+}
+
+main > button {
+    color: white;
+    background-color: var(--cor0);
+    margin: 20px 0px 0px 0px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    animation-duration: 0.5s;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main > button:hover {
+    color: var(--cor0);
+    background-color: white;
+}
+
+button > a {
+    text-decoration: none;
+    color: white;
+}
+
+div > h1 {
+    text-align: center;
+    padding-top: 130px;
+    padding-bottom: 50px;
+    font-size: 2em;
+}
+
+div > img {
+    width: 60px;
+    margin-left: 10px;
+    margin-top: 40px;
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: center;     /* centraliza verticalmente */
+    display: block;
+    margin: auto;
+    padding-top: 15px;
+}
+
+div > h2 {
+    padding: 15px 0px 0px 0px;
+}
+
+.parte > p {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.quadrado {
+      width: 350px;
+      height: 250px;;
+      flex-direction: row; /*para deixar a div do lado. column, se quiser empilhar */
+      justify-content: center;   /* Centraliza horizontalmente */
+      gap: 15px;                 /* Espaço entre as divs */
+      margin: auto;
+      flex-wrap: wrap;
+      display: flex;
+    }
+
+    .parte {
+      flex: 1;
+      background-color: var(--cor0);
+      border: 1px solid black;
+      padding: 14px;
+      text-align: center;
+      border-radius: 15px;
+      transition: var(--transicao);
+    }
+
+    @media (max-width: 600px) {
+  .parte {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+    .parte:hover {
+        transform: translateY(-5px); /*animação de levantar a div*/
+        box-shadow: 0px 5px 12px rgba(255, 255, 255, 0.205);
+    }
+
+    .parte:nth-child(2) {
+      background-color:  var(--cor0);
+    }
+
+section > h1 {
+    text-align: center;
+    padding: 130px 0px 30px 0px;
+    font-size: 2em;
+    margin-top: 50px;
+}
+
+    .projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.projeto-card {
+    background-color: var(--cor0);
+    border-radius: 20px;
+    padding: 24px;
+    transition: var(--transicao);
+    margin: auto;
+    width: 300px;  /*retirar quando colocar mais projetos*/
+    height: 120px; /*tambem retirar*/
+    margin-bottom: 180px;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px); /*animação de levantar a div*/
+    box-shadow: 0px 5px 12px rgba(255, 255, 255, 0.205);
+}
+
+.titulo-projeto {
+    font-size: 1.4em;
+    margin-bottom: 0.5rem;
+}
+
+.projeto-tags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projeto-tags > span {
+    background-color: black;
+    color: white;
+    padding: 4px 8px;
+    font-size: 15px;
+    border-radius: 25px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.contato {
+    background-color: var(--cor0);
+    color: white;
+}
+
+.titulo-contato {
+    color: white;
+}
+
+.contato-form {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.grupo-formulario {
+    margin-bottom: 24px;
+}
+
+label {
+    margin-bottom: 8px;
+    display: block; /*ir para baixo*/
+    margin: auto;
+}
+
+input, textarea {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    width: 93%; /*ocupa o maximo que conseguir*/
+}
+
+form > button {
+    border-radius: 5px;
+    background-color: white;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    animation-duration: 0.5s;
+    margin-bottom: 70px;
+}
+
+form > button:hover {
+    background-color: rgb(206, 205, 205);
+}
+
+footer {
+    background-color: var(--cor0);
+    text-align: center;
+    padding: 32px 0px;
+}
+
+.icones-footer {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 16px;
+}

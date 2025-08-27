@@ -62,13 +62,13 @@ header > a:hover {
 }
 
 main {
+    text-align: center;
     background-color: black;
     min-width: 290px;
     max-width: 1000px;
     margin: auto;
     margin-bottom: 20px;
     margin-top: 140px;
-    margin-right: 40px;
     padding: 20px 40px 20px 20px;    /*70*/
     border-radius: 20px;
 }
@@ -83,27 +83,6 @@ main > p {
     color: white;
     font-size: 1.3em;
     padding-top: 15px;
-}
-
-main > button {
-    color: white;
-    background-color: var(--cor0);
-    margin: 20px 0px 0px 0px;
-    padding: 10px 20px;
-    border-radius: 15px;
-    animation-duration: 0.5s;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-main > button:hover {
-    color: var(--cor0);
-    background-color: white;
-}
-
-button > a {
-    text-decoration: none;
-    color: white;
 }
 
 div > h1 {
@@ -278,4 +257,19 @@ footer {
     justify-content: center;
     list-style: none;
     margin-bottom: 16px;
+
+.icones-footer img {
+    width: 30px;
+    margin: 10px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.644);
+    box-sizing: border-box;
+    transition: transform 0.5s, border 1s;
+}
+
+.icones-footer img:hover {
+    border: 2px solid white;
+    transform: translate(-3px, -3px);
+    box-shadow: 5px 5px 10px black;
+    cursor: pointer;
 }

@@ -96,14 +96,14 @@
 
     <section id="contato" class="contato fade-in">
       <h1 class="titulo-contato">Contate-me!</h1>
-      <form class="contato-form">
+      <form id="meuFormulario" class="contato-form" action="https://formspree.io/f/mnnbrwjn" method="POST">
         <div class="grupo-formulario">
           <label form="nome">Nome</label>
-          <input id="nome" name="nome" required>
+          <input type="text" id="nome" name="nome" required>
         </div>
         <div class="grupo-formulario">
           <label form="email">Email</label>
-          <input id="email" name="email" required>
+          <input type="email" id="email" name="email" required>
         </div>
         <div class="grupo-formulario">
           <label form="mensagem">Mensagem</label>
@@ -112,6 +112,7 @@
         <button type="submit">Mandar mensagem</button>
       </form>
     </section>
+
     <footer>
       <ul class="icones-footer">
         <li>
@@ -137,5 +138,32 @@
       </ul>
       <p>&copy; 2025 Makalister Mutz Zager. Todos os direitos reservados</p>
     </footer>
+
+    <script>
+    const form = document.getElementById("meuFormulario");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const dados = {
+        nome: document.getElementById("nome").value,
+        email: document.getElementById("email").value,
+        mensagem: document.getElementById("mensagem").value
+      };
+
+      fetch("/enviar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dados)
+      })
+      .then(res => res.json())
+      .then(resposta => {
+        alert(resposta.msg);
+      })
+      .catch(err => {
+        alert("Erro ao enviar: " + err);
+      });
+    });
+  </script>
 </body>
 </html>

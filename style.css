@@ -157,7 +157,6 @@ section > h1 {
 }
 
 .projetos-grid {
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
@@ -168,9 +167,8 @@ section > h1 {
     padding: 24px;
     transition: var(--transicao);
     margin: auto;
-    width: 300px;  /*retirar quando colocar mais projetos*/
-    height: 120px; /*tambem retirar*/
-    margin-bottom: 180px;
+    width: 300px;
+    height: 120px;
 }
 
 .projeto-card:hover {
